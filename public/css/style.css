@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+*{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
+    header,
+    .view {
+      height: 100vh;
+    }
+    .custom-menu{
+        z-index: -99;
+        transition:all 0.4s;
+        top: 0px;
+        right: -100px;
+        width:0px; 
+        height:100vh;
+    }
+    .sidebar-show{
+      right: 0px;
+      width: 150px;
+    }
+    @media (max-width: 740px) {
+
+      header,
+      .view {
+        height: 1100px;
+      }
+    }
+    @media (min-width: 800px) and (max-width: 850px) {
+
+      header,
+      .view {
+        height: 700px;
+      }
+    }
+
+    .top-nav-collapse {
+      background-color: #ffbb33!important;
+      
+    }
+
+    .navbar:not(.top-nav-collapse) {
+      background: transparent !important;
+    }
+
+    @media (max-width: 991px) {
+    .navbar:not(.top-nav-collapse) {
+      background: #ffbb33!important;
+    }
+    }
+
+    h6 {
+      line-height: 1.7;
+    }
+    .bh-home{
+      background-image: url('../react-js.jpg'); 
+      background-repeat: no-repeat; 
+      background-size: cover; 
+      background-position: center center;
+    }
+    

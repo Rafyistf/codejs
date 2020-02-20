@@ -1,56 +1,28 @@
 import React from 'react'
-import Link from 'next/link'
+import Head from 'next/head'
+import Navigation from './navigation'
+const Nav = ({childern, title}) => (
+  <div className="body">
+    <Head>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+      <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+      <title>{title}</title>
 
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
-].map(link => ({
-  ...link,
-  key: `nav-link-${link.href}-${link.label}`,
-}))
+      <link rel="icon" href="/iconjs.png"/>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
+      <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+      <link href="../css/addons/datatables.min.css" rel="stylesheet"/>
+      <link rel="stylesheet" href="../css/mdb.min.css"/>
+      <link rel="stylesheet" href="../css/style.css"/>
 
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
-
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
-  </nav>
+      {/* <script type="text/javascript" async src="../js/jquery.min.js"></script>
+      <script type="text/javascript" async src="../js/popper.min.js"></script>
+      <script type="text/javascript" async src="../js/bootstrap.min.js"></script>
+      <script type="text/javascript" async src="../js/mdb.min.js"></script> */}
+    </Head>
+      <Navigation/>
+      {childern}
+  </div>
 )
-
 export default Nav
